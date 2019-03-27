@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: c5f899887ee30024691295b777a1f4c0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Box005
+    100002: Box006
+    100004: cone
+    100006: cone001
+    100008: cone002
+    100010: Cylinder005
+    100012: Cylinder006
+    100014: Cylinder007
+    100016: Cylinder008
+    100018: Cylinder010
+    100020: Cylinder011
+    100022: Cylinder012
+    100024: halfpipe
+    100026: holepath
+    100028: //RootNode
+    100030: Plane001
+    100032: Plane002
+    100034: platforms
+    100036: ramp004
+    100038: ramp005
+    100040: ramp1
+    100042: ramp2
+    100044: ramp3
+    400000: Box005
+    400002: Box006
+    400004: cone
+    400006: cone001
+    400008: cone002
+    400010: Cylinder005
+    400012: Cylinder006
+    400014: Cylinder007
+    400016: Cylinder008
+    400018: Cylinder010
+    400020: Cylinder011
+    400022: Cylinder012
+    400024: halfpipe
+    400026: holepath
+    400028: //RootNode
+    400030: Plane001
+    400032: Plane002
+    400034: platforms
+    400036: ramp004
+    400038: ramp005
+    400040: ramp1
+    400042: ramp2
+    400044: ramp3
+    2100000: No Name
+    2300000: Box005
+    2300002: Box006
+    2300004: cone
+    2300006: cone001
+    2300008: cone002
+    2300010: Cylinder005
+    2300012: Cylinder006
+    2300014: Cylinder007
+    2300016: Cylinder008
+    2300018: Cylinder010
+    2300020: Cylinder011
+    2300022: Cylinder012
+    2300024: halfpipe
+    2300026: holepath
+    2300028: Plane001
+    2300030: Plane002
+    2300032: platforms
+    2300034: ramp004
+    2300036: ramp005
+    2300038: ramp1
+    2300040: ramp2
+    2300042: ramp3
+    3300000: Box005
+    3300002: Box006
+    3300004: cone
+    3300006: cone001
+    3300008: cone002
+    3300010: Cylinder005
+    3300012: Cylinder006
+    3300014: Cylinder007
+    3300016: Cylinder008
+    3300018: Cylinder010
+    3300020: Cylinder011
+    3300022: Cylinder012
+    3300024: halfpipe
+    3300026: holepath
+    3300028: Plane001
+    3300030: Plane002
+    3300032: platforms
+    3300034: ramp004
+    3300036: ramp005
+    3300038: ramp1
+    3300040: ramp2
+    3300042: ramp3
+    4300000: ramp3
+    4300002: ramp2
+    4300004: cone
+    4300006: Cylinder005
+    4300008: platforms
+    4300010: Cylinder006
+    4300012: Cylinder007
+    4300014: Cylinder008
+    4300016: ramp1
+    4300018: holepath
+    4300020: halfpipe
+    4300022: Plane001
+    4300024: Plane002
+    4300026: Box005
+    4300028: Box006
+    4300030: ramp004
+    4300032: ramp005
+    4300034: Cylinder010
+    4300036: Cylinder011
+    4300038: Cylinder012
+    4300040: cone001
+    4300042: cone002
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
