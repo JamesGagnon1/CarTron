@@ -56,17 +56,6 @@
      <Compile Include="Assets\Scripts\Builder.cs" />
      <Compile Include="Assets\Scripts\Cam.cs" />
      <Compile Include="Assets\Scripts\CarMove.cs" />
-     <Compile Include="Assets\Scripts\Messenger.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Powerup.cs" />
-     <Compile Include="Assets\Scripts\PowerupActions.cs" />
-     <Compile Include="Assets\Scripts\PowerupBehaviour.cs" />
-     <Compile Include="Assets\Scripts\PowerupController.cs" />
-     <Compile Include="Assets\Scripts\RandomColor.cs" />
-     <Compile Include="Assets\Scripts\SettingsPopup.cs" />
-     <Compile Include="Assets\Scripts\SmoothFollow.cs" />
-     <Compile Include="Assets\Scripts\Spinner.cs" />
-     <Compile Include="Assets\Scripts\UIController.cs" />
      <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Emissive Diffuse.shader" />
      <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Transparent Diffuse Bump Cutout.shader" />
      <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Standard Diffuse Bump.shader" />

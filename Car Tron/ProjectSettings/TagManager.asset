@@ -10,6 +10,9 @@ TagManager:
   - Nose
   - Wing
   - Engine
+  - P1
+  - P2
+  - Death
   layers:
   - Default
   - TransparentFX
