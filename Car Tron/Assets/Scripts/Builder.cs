@@ -17,6 +17,8 @@ public class Builder : MonoBehaviour {
 	public GameObject BuildCanvas;
 	public GameObject Dot;
 	public bool P1;
+	public GameObject MenuSong;
+	public GameObject GameSong;
 
 	void Start () {
 		for (int i = 0; i < CarPrefabs.Length; i++) {
@@ -135,39 +137,39 @@ public class Builder : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
 			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Body")) {
-			if (G.transform.parent == null) {
-				Destroy(G);
+				if (G.transform.parent == null) {
+					Destroy(G);
+				}
 			}
-		}
-		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Hat")) {
-			if (G.transform.parent == null) {
-				Destroy(G);
+			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Hat")) {
+				if (G.transform.parent == null) {
+					Destroy(G);
+				}
 			}
-		}
-		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Nose")) {
-			if (G.transform.parent == null) {
-				Destroy(G);
+			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Nose")) {
+				if (G.transform.parent == null) {
+					Destroy(G);
+				}
 			}
-		}
-		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Wing")) {
-			if (G.transform.parent == null) {
-				Destroy(G);
+			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Wing")) {
+				if (G.transform.parent == null) {
+					Destroy(G);
+				}
 			}
-		}
-		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Engine")) {
-			if (G.transform.parent == null) {
-				Destroy(G);
+			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Engine")) {
+				if (G.transform.parent == null) {
+					Destroy(G);
+				}
 			}
-		}
-		BuildCanvas.SetActive(false);
-		foreach (GameObject G in GameObject.FindGameObjectsWithTag("MainCamera")) {
-			G.GetComponent<Cam>().enabled = true;
-		}
-		GameObject C = GameObject.Find("Car P2");
-		C.GetComponent<CarMove>().enabled = true;
-		GetComponent<CarMove>().enabled = true;
-		C.GetComponent<Builder>().enabled = false;
-		GetComponent<Builder>().enabled = false;
+			BuildCanvas.SetActive(false);
+			foreach (GameObject G in GameObject.FindGameObjectsWithTag("MainCamera")) {
+				G.GetComponent<Cam>().enabled = true;
+			}
+			GameObject C = GameObject.Find("Car P2");
+			C.GetComponent<CarMove>().enabled = true;
+			GetComponent<CarMove>().enabled = true;
+			C.GetComponent<Builder>().enabled = false;
+			GetComponent<Builder>().enabled = false;
 		}
 	}
 	/*public void BodyBtn() {
@@ -234,6 +236,8 @@ public class Builder : MonoBehaviour {
 		C.GetComponent<CarMove>().enabled = true;
 		GetComponent<CarMove>().enabled = true;
 		C.GetComponent<Builder>().enabled = false;
+		MenuSong.SetActive(false);
+		GameSong.SetActive(true);
 		GetComponent<Builder>().enabled = false;
 	}
 }
