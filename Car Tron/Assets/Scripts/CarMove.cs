@@ -7,6 +7,7 @@ public class CarMove : MonoBehaviour {
 	public GameObject Trail;
 	public GameObject P1Wins;
 	public GameObject P2Wins;
+	public GameObject Draw;
 	public GameObject EndScreen;
 	public ParticleSystem Explosion;
 	public Vector3 StartPoint;
@@ -84,16 +85,20 @@ public class CarMove : MonoBehaviour {
 		}
 	}
 	void OnCollisionEnter (Collision Hit) {
-		if (Hit.gameObject.tag == "Death" || Hit.gameObject.tag == "P1") {
+		if (Hit.gameObject.tag == "Death" || Hit.gameObject.tag == "P1" || Hit.gameObject.tag == "P2") {
 			Instantiate (Explosion, transform.position, transform.rotation);
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
-			if (P1) {
-				Destroy(GameObject.Find("Car P2"));
-				P2Wins.SetActive(true);
+			if (Hit.gameObject.tag == "Death") {
+				if (P1) {
+					Destroy(GameObject.Find("Car P2"));
+					P2Wins.SetActive(true);
+				} else {
+					Destroy(GameObject.Find("Car P1"));
+					P1Wins.SetActive(true);
+				}
 			} else {
-				Destroy(GameObject.Find("Car P1"));
-				P1Wins.SetActive(true);
+				Draw.SetActive(true);
 			}
 			EndScreen.SetActive(true);
 			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Death")) {

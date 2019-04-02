@@ -27,6 +27,10 @@ public class Builder : MonoBehaviour {
 			
 		}
 		TypePick = 0;
+		print (transform.position);
+		print (transform.rotation);
+		GetComponent<Rigidbody>().velocity = Vector3.zero;
+		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 	}
 	
 
@@ -128,8 +132,45 @@ public class Builder : MonoBehaviour {
 	
 		transform.RotateAround(transform.position, transform.up, Time.deltaTime * 50);
 		transform.position += transform.up * Mathf.Sin (Time.time * 3) * Time.deltaTime ;
+
+		if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
+			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Body")) {
+			if (G.transform.parent == null) {
+				Destroy(G);
+			}
+		}
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Hat")) {
+			if (G.transform.parent == null) {
+				Destroy(G);
+			}
+		}
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Nose")) {
+			if (G.transform.parent == null) {
+				Destroy(G);
+			}
+		}
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Wing")) {
+			if (G.transform.parent == null) {
+				Destroy(G);
+			}
+		}
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Engine")) {
+			if (G.transform.parent == null) {
+				Destroy(G);
+			}
+		}
+		BuildCanvas.SetActive(false);
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("MainCamera")) {
+			G.GetComponent<Cam>().enabled = true;
+		}
+		GameObject C = GameObject.Find("Car P2");
+		C.GetComponent<CarMove>().enabled = true;
+		GetComponent<CarMove>().enabled = true;
+		C.GetComponent<Builder>().enabled = false;
+		GetComponent<Builder>().enabled = false;
+		}
 	}
-	public void BodyBtn() {
+	/*public void BodyBtn() {
 		TypePick = 0;
 	}
 	public void HatBtn() {
@@ -157,7 +198,7 @@ public class Builder : MonoBehaviour {
 			PartShow[TypePick] = CarPrefabs [TypePick].Parts.Length - 1;
 		}
 		Parts[TypePick] = PartShow[TypePick];
-	}
+	}*/
 
 	public void StartBtn() {
 		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Body")) {
