@@ -12,10 +12,6 @@ public class UIController : MonoBehaviour {
 
     public void OnOpenSettings() {
 		settingsPopup.Open ();
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            settingsPopup.Open();
-        }
     }
 		
 	void Start () {
