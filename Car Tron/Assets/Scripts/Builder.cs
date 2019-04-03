@@ -17,8 +17,7 @@ public class Builder : MonoBehaviour {
 	public GameObject BuildCanvas;
 	public GameObject Dot;
 	public bool P1;
-	public GameObject MenuSong;
-	public GameObject GameSong;
+    public GameObject PauseCanvas;
 
 	void Start () {
 		for (int i = 0; i < CarPrefabs.Length; i++) {
@@ -33,6 +32,7 @@ public class Builder : MonoBehaviour {
 		print (transform.rotation);
 		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        PauseCanvas.SetActive(false);
 	}
 	
 
@@ -62,11 +62,11 @@ public class Builder : MonoBehaviour {
 			}
 			Parts[TypePick] = PartShow[TypePick];
 		}
-		
-		if ((P1 && Input.GetKeyDown(KeyCode.A)) || (!P1 && Input.GetKeyDown(KeyCode.LeftArrow)) ) {
 			PartShow[TypePick]--;
 			if (PartShow[TypePick] < 0) {
 				PartShow[TypePick] = CarPrefabs [TypePick].Parts.Length - 1;
+		
+		if ((P1 && Input.GetKeyDown(KeyCode.A)) || (!P1 && Input.GetKeyDown(KeyCode.LeftArrow)) ) {
 			}
 			Parts[TypePick] = PartShow[TypePick];
 		}
@@ -137,39 +137,40 @@ public class Builder : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
 			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Body")) {
-				if (G.transform.parent == null) {
-					Destroy(G);
-				}
+			if (G.transform.parent == null) {
+				Destroy(G);
 			}
-			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Hat")) {
-				if (G.transform.parent == null) {
-					Destroy(G);
-				}
+		}
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Hat")) {
+			if (G.transform.parent == null) {
+				Destroy(G);
 			}
-			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Nose")) {
-				if (G.transform.parent == null) {
-					Destroy(G);
-				}
+		}
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Nose")) {
+			if (G.transform.parent == null) {
+				Destroy(G);
 			}
-			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Wing")) {
-				if (G.transform.parent == null) {
-					Destroy(G);
-				}
+		}
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Wing")) {
+			if (G.transform.parent == null) {
+				Destroy(G);
 			}
-			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Engine")) {
-				if (G.transform.parent == null) {
-					Destroy(G);
-				}
+		}
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Engine")) {
+			if (G.transform.parent == null) {
+				Destroy(G);
 			}
-			BuildCanvas.SetActive(false);
-			foreach (GameObject G in GameObject.FindGameObjectsWithTag("MainCamera")) {
-				G.GetComponent<Cam>().enabled = true;
-			}
-			GameObject C = GameObject.Find("Car P2");
-			C.GetComponent<CarMove>().enabled = true;
-			GetComponent<CarMove>().enabled = true;
-			C.GetComponent<Builder>().enabled = false;
-			GetComponent<Builder>().enabled = false;
+		}
+		BuildCanvas.SetActive(false);
+        PauseCanvas.SetActive(true);
+		foreach (GameObject G in GameObject.FindGameObjectsWithTag("MainCamera")) {
+			G.GetComponent<Cam>().enabled = true;
+		}
+		GameObject C = GameObject.Find("Car P2");
+		C.GetComponent<CarMove>().enabled = true;
+		GetComponent<CarMove>().enabled = true;
+		C.GetComponent<Builder>().enabled = false;
+		GetComponent<Builder>().enabled = false;
 		}
 	}
 	/*public void BodyBtn() {
@@ -236,8 +237,8 @@ public class Builder : MonoBehaviour {
 		C.GetComponent<CarMove>().enabled = true;
 		GetComponent<CarMove>().enabled = true;
 		C.GetComponent<Builder>().enabled = false;
-		MenuSong.SetActive(false);
-		GameSong.SetActive(true);
 		GetComponent<Builder>().enabled = false;
+
+        PauseCanvas.SetActive(true);
 	}
 }
