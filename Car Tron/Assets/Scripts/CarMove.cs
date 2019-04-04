@@ -19,13 +19,14 @@ public class CarMove : MonoBehaviour {
 	public float TrailTime;
 	public bool P1;
 	float BtnInput;
-	float time;
+	float trail_time;
 	Rigidbody RB;
 	public TrailRenderer TR;
 	Color TrailColor;
 
 	void Start () {
 		RB = GetComponent <Rigidbody>();
+		RB.isKinematic = false;
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 		RB.centerOfMass = new Vector3(0, -0.5f, 0.5f);
@@ -41,11 +42,12 @@ public class CarMove : MonoBehaviour {
 		RB.useGravity = true;
 		
 		TR.enabled = true;
-		time = TrailTime;
+		trail_time = TrailTime;
+		GetComponent<BoxCollider>().enabled = true;
 	}
 	
 	void Update () {
-		time += Time.deltaTime;
+		trail_time += Time.deltaTime;
 		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Body")) {
 			if (G.name.Contains(gameObject.tag)) {
 				TrailColor = GameObject.Find (G.name + "/chassis").GetComponent<Renderer>().material.GetColor("_Color");
@@ -60,7 +62,7 @@ public class CarMove : MonoBehaviour {
 		}
 		
 		Vector3 LocVel = transform.InverseTransformDirection(RB.velocity);
-		RB.AddTorque(transform.up * TurnSpeed * BtnInput);
+		RB.AddTorque(transform.up * TurnSpeed * BtnInput * Time.deltaTime * 50);
 		foreach (WheelCollider Wheel in GetComponentsInChildren<WheelCollider>()) {
 			Wheel.radius += Mathf.Sin (Time.time * first) * Time.deltaTime * second;
 			if (LocVel.z < 15) {
@@ -79,8 +81,8 @@ public class CarMove : MonoBehaviour {
 				}
 			}
 		}
-		if (time >= TrailTime) {
-			time = 0;
+		if (trail_time >= TrailTime) {
+			trail_time = 0;
 			Instantiate(Trail, transform.position + transform.forward * -0.5f,transform.rotation);
 		}
 	}

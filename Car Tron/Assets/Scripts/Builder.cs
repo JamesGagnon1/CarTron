@@ -6,14 +6,15 @@ using UnityEngine;
 
 public class CarParts {
 	public string PartType;
-	public GameObject[] Parts;
+	public GameObject[] CarPrefabs;
 }
 public class Builder : MonoBehaviour {
 
-	public CarParts[] CarPrefabs;
+	public CarParts[] PartPrefabs;
 	int TypePick;
-	int[] Parts = {0, 0, 0, 0, 0};
-	int[] PartShow = {0, 0, 0, 0, 0};
+	public static int[] PartsP1 = {0, 0, 0, 0, 0};
+	public static int[] PartsP2 = {0, 0, 0, 0, 0};
+	int[] Parts;
 	public GameObject BuildCanvas;
 	public GameObject Dot;
 	public bool P1;
@@ -21,8 +22,8 @@ public class Builder : MonoBehaviour {
 	public GameObject GameSong;
 
 	void Start () {
-		for (int i = 0; i < CarPrefabs.Length; i++) {
-			foreach (GameObject G in CarPrefabs[i].Parts) {
+		for (int i = 0; i < PartPrefabs.Length; i++) {
+			foreach (GameObject G in PartPrefabs[i].CarPrefabs) {
 				GameObject NewG = Instantiate(G);
 				NewG.name = G.name + gameObject.tag;
 			}
@@ -31,12 +32,19 @@ public class Builder : MonoBehaviour {
 		TypePick = 0;
 		print (transform.position);
 		print (transform.rotation);
-		GetComponent<Rigidbody>().velocity = Vector3.zero;
-		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+		GetComponent<Rigidbody>().isKinematic = true;
+		if (P1) {
+			Parts = PartsP1;
+			//transform.position = new Vector3 (-2, 0.5f, 0);
+		} else {
+			Parts = PartsP2;
+			//transform.position = new Vector3 (2, 0.5f, 0);
+		}
 	}
 	
 
 	void Update () {
+		//GetComponent<Rigidbody>().isKinematic = false;
 		if ((P1 && Input.GetKeyDown(KeyCode.W)) || (!P1 && Input.GetKeyDown(KeyCode.UpArrow)) ) {
 			TypePick --;
 			Dot.transform.localPosition += new Vector3 (0, 75, 0);
@@ -56,19 +64,17 @@ public class Builder : MonoBehaviour {
 		}
 
 		if ((P1 && Input.GetKeyDown(KeyCode.D)) || (!P1 && Input.GetKeyDown(KeyCode.RightArrow)) ) {
-			PartShow[TypePick]++;
-			if (PartShow[TypePick] + 1 > CarPrefabs [TypePick].Parts.Length) {
-				PartShow[TypePick] -= CarPrefabs [TypePick].Parts.Length;
+			Parts[TypePick]++;
+			if (Parts[TypePick] + 1 > PartPrefabs [TypePick].CarPrefabs.Length) {
+				Parts[TypePick] -= PartPrefabs [TypePick].CarPrefabs.Length;
 			}
-			Parts[TypePick] = PartShow[TypePick];
 		}
 		
 		if ((P1 && Input.GetKeyDown(KeyCode.A)) || (!P1 && Input.GetKeyDown(KeyCode.LeftArrow)) ) {
-			PartShow[TypePick]--;
-			if (PartShow[TypePick] < 0) {
-				PartShow[TypePick] = CarPrefabs [TypePick].Parts.Length - 1;
+			Parts[TypePick]--;
+			if (Parts[TypePick] < 0) {
+				Parts[TypePick] = PartPrefabs [TypePick].CarPrefabs.Length - 1;
 			}
-			Parts[TypePick] = PartShow[TypePick];
 		}
 
 		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Body")) {
@@ -133,7 +139,12 @@ public class Builder : MonoBehaviour {
 		}
 	
 		transform.RotateAround(transform.position, transform.up, Time.deltaTime * 50);
-		transform.position += transform.up * Mathf.Sin (Time.time * 3) * Time.deltaTime ;
+		transform.position = new Vector3(transform.position.x, Mathf.Sin (Time.time * 3) * 0.25f + 1, transform.position.z);
+		if (P1) {
+			PartsP1 = Parts;
+		} else {
+			PartsP2 = Parts;
+		}
 
 		if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
 			foreach (GameObject G in GameObject.FindGameObjectsWithTag("Body")) {
@@ -169,38 +180,12 @@ public class Builder : MonoBehaviour {
 			C.GetComponent<CarMove>().enabled = true;
 			GetComponent<CarMove>().enabled = true;
 			C.GetComponent<Builder>().enabled = false;
+			MenuSong.SetActive(false);
+			GameSong.SetActive(true);
 			GetComponent<Builder>().enabled = false;
 		}
 	}
-	/*public void BodyBtn() {
-		TypePick = 0;
-	}
-	public void HatBtn() {
-		TypePick = 1;
-	}
-	public void NoseBtn() {
-		TypePick = 2;
-	}
-	public void WingBtn() {
-		TypePick = 3;
-	}
-	public void EngineBtn() {
-		TypePick = 4;
-	}
-	public void Right() {
-		PartShow[TypePick]++;
-		if (PartShow[TypePick] + 1 > CarPrefabs [TypePick].Parts.Length) {
-			PartShow[TypePick] -= CarPrefabs [TypePick].Parts.Length;
-		}
-		Parts[TypePick] = PartShow[TypePick];
-	}
-	public void Left() {
-		PartShow[TypePick]--;
-		if (PartShow[TypePick] < 0) {
-			PartShow[TypePick] = CarPrefabs [TypePick].Parts.Length - 1;
-		}
-		Parts[TypePick] = PartShow[TypePick];
-	}*/
+
 
 	public void StartBtn() {
 		foreach (GameObject G in GameObject.FindGameObjectsWithTag("Body")) {

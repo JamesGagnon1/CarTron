@@ -19,7 +19,10 @@ public class Cam : MonoBehaviour {
 			}
 		}
 	}
-	public void Restart() {
+	public void Restart () {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+	public void Quit () {
+		Application.Quit();
 	}
 }

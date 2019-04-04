@@ -1759,6 +1759,7 @@ RectTransform:
   - {fileID: 2001137195}
   - {fileID: 1285840866}
   - {fileID: 1981887215}
+  - {fileID: 1158600736}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2386,7 +2387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.8745098, g: 0.8745098, b: 0.8745098, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2395,16 +2396,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
-    m_FontStyle: 1
+    m_FontSize: 100
+    m_FontStyle: 3
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Restart
 --- !u!222 &900542678
@@ -2906,6 +2907,129 @@ WheelCollider:
     m_AsymptoteValue: 0.375
     m_Stiffness: 0.5
   m_Enabled: 0
+--- !u!1 &1158600735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1158600736}
+  - component: {fileID: 1158600739}
+  - component: {fileID: 1158600738}
+  - component: {fileID: 1158600737}
+  m_Layer: 5
+  m_Name: Quit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1158600736
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158600735}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1930078688}
+  m_Father: {fileID: 677019108}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -250}
+  m_SizeDelta: {x: 175, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1158600737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158600735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1930078689}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1317027984}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1158600738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158600735}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1158600739
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158600735}
+  m_CullTransparentMesh: 0
 --- !u!1 &1163792909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100030, guid: c5f899887ee30024691295b777a1f4c0,
@@ -3361,11 +3485,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 175
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 100
+    m_MaxSize: 175
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3705,7 +3829,6 @@ GameObject:
   - component: {fileID: 1421073133}
   - component: {fileID: 1421073131}
   - component: {fileID: 1421073132}
-  - component: {fileID: 1421073134}
   m_Layer: 0
   m_Name: Car P1
   m_TagString: P1
@@ -3724,29 +3847,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13fad50fd5092046b056604418b002d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarPrefabs:
+  PartPrefabs:
   - PartType: Body
-    Parts:
+    CarPrefabs:
     - {fileID: 1025971306797642, guid: 5be0f51469e18484c94914496d7b71ae, type: 2}
     - {fileID: 1972821753577438, guid: 4a25c572efc782b4c888fc51d83a11ef, type: 2}
     - {fileID: 1728719668318974, guid: fc686d1f8139565448955b10f1299bf8, type: 2}
   - PartType: Hat
-    Parts:
+    CarPrefabs:
     - {fileID: 1521382934834120, guid: 4d34cc06bf4d4764f9055b4169fdc208, type: 2}
     - {fileID: 1167183800796532, guid: 16d4c4e8b0e37494f9cc6037c9d6c923, type: 2}
     - {fileID: 1713293105674446, guid: 4adef1975938c10489201744c5aa7f2a, type: 2}
   - PartType: Nose
-    Parts:
+    CarPrefabs:
     - {fileID: 1539926340208840, guid: 85fbc1f6669395f468649c1ea449372d, type: 2}
     - {fileID: 1056140195237022, guid: 11db9ba20b30558488bb1e0fe6e255f8, type: 2}
     - {fileID: 1559099454465086, guid: f0588c8d499265a428972bef3a6f9cfd, type: 2}
-  - PartType: Wings
-    Parts:
+  - PartType: Wing
+    CarPrefabs:
     - {fileID: 1209309708539876, guid: e60b046070ec3d74cbbf207e92ce768a, type: 2}
     - {fileID: 1419658584402784, guid: b1a44aded609e944da77b72270763292, type: 2}
     - {fileID: 1639011113605150, guid: 5b8d8d47dbfa63346afaf045b8e11baa, type: 2}
   - PartType: Engine
-    Parts:
+    CarPrefabs:
     - {fileID: 1060676850840382, guid: 6f0b94834e8419a4684c6b5f6b6f0799, type: 2}
     - {fileID: 1505508319491144, guid: 8b92d7de15a289d49a1cdae952922b9b, type: 2}
     - {fileID: 1127104179293290, guid: cbc4804f7b3388f4ab9590005a7cade8, type: 2}
@@ -3793,7 +3916,7 @@ BoxCollider:
   m_GameObject: {fileID: 1421073128}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.6, z: 1.25}
   m_Center: {x: 0, y: 0.120000005, z: 0.45}
@@ -3817,26 +3940,13 @@ MonoBehaviour:
     type: 2}
   StartPoint: {x: 0, y: 1, z: -20}
   Speed: 0.5
-  TurnSpeed: 1
+  TurnSpeed: 1.5
   BrakePower: 250
   first: 3.5
   second: 0.35
   TrailTime: 0.05
   P1: 1
   TR: {fileID: 1484030682}
---- !u!136 &1421073134
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1421073128}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.375
-  m_Height: 1.25
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.42, z: 0.45}
 --- !u!1 &1444198163
 GameObject:
   m_ObjectHideFlags: 0
@@ -4216,7 +4326,6 @@ GameObject:
   - component: {fileID: 1586018509}
   - component: {fileID: 1586018508}
   - component: {fileID: 1586018507}
-  - component: {fileID: 1586018506}
   m_Layer: 0
   m_Name: Car P2
   m_TagString: P2
@@ -4224,19 +4333,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1586018506
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1586018505}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.375
-  m_Height: 1.63
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.42, z: 0.615}
 --- !u!65 &1586018507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4245,7 +4341,7 @@ BoxCollider:
   m_GameObject: {fileID: 1586018505}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.6, z: 1.25}
   m_Center: {x: 0, y: 0.120000005, z: 0.45}
@@ -4284,7 +4380,7 @@ MonoBehaviour:
     type: 2}
   StartPoint: {x: 0, y: 1, z: 20}
   Speed: 0.5
-  TurnSpeed: 1
+  TurnSpeed: 1.5
   BrakePower: 250
   first: 3.5
   second: 0.35
@@ -4302,29 +4398,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13fad50fd5092046b056604418b002d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarPrefabs:
+  PartPrefabs:
   - PartType: Body
-    Parts:
+    CarPrefabs:
     - {fileID: 1025971306797642, guid: 5be0f51469e18484c94914496d7b71ae, type: 2}
     - {fileID: 1972821753577438, guid: 4a25c572efc782b4c888fc51d83a11ef, type: 2}
     - {fileID: 1728719668318974, guid: fc686d1f8139565448955b10f1299bf8, type: 2}
   - PartType: Hat
-    Parts:
+    CarPrefabs:
     - {fileID: 1521382934834120, guid: 4d34cc06bf4d4764f9055b4169fdc208, type: 2}
     - {fileID: 1167183800796532, guid: 16d4c4e8b0e37494f9cc6037c9d6c923, type: 2}
     - {fileID: 1713293105674446, guid: 4adef1975938c10489201744c5aa7f2a, type: 2}
   - PartType: Nose
-    Parts:
+    CarPrefabs:
     - {fileID: 1539926340208840, guid: 85fbc1f6669395f468649c1ea449372d, type: 2}
     - {fileID: 1056140195237022, guid: 11db9ba20b30558488bb1e0fe6e255f8, type: 2}
     - {fileID: 1559099454465086, guid: f0588c8d499265a428972bef3a6f9cfd, type: 2}
-  - PartType: Wings
-    Parts:
+  - PartType: Wing
+    CarPrefabs:
     - {fileID: 1209309708539876, guid: e60b046070ec3d74cbbf207e92ce768a, type: 2}
     - {fileID: 1419658584402784, guid: b1a44aded609e944da77b72270763292, type: 2}
     - {fileID: 1639011113605150, guid: 5b8d8d47dbfa63346afaf045b8e11baa, type: 2}
   - PartType: Engine
-    Parts:
+    CarPrefabs:
     - {fileID: 1060676850840382, guid: 6f0b94834e8419a4684c6b5f6b6f0799, type: 2}
     - {fileID: 1505508319491144, guid: 8b92d7de15a289d49a1cdae952922b9b, type: 2}
     - {fileID: 1127104179293290, guid: cbc4804f7b3388f4ab9590005a7cade8, type: 2}
@@ -5150,6 +5246,81 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300014, guid: c5f899887ee30024691295b777a1f4c0, type: 3}
+--- !u!1 &1930078687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1930078688}
+  - component: {fileID: 1930078690}
+  - component: {fileID: 1930078689}
+  m_Layer: 5
+  m_Name: Quit Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1930078688
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930078687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1158600736}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1930078689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930078687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.627451, g: 0.627451, b: 0.627451, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 70
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Quit
+--- !u!222 &1930078690
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930078687}
+  m_CullTransparentMesh: 0
 --- !u!1 &1939484965
 GameObject:
   m_ObjectHideFlags: 0
@@ -5329,11 +5500,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 175
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 100
+    m_MaxSize: 175
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5415,7 +5586,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 375, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981887216
 MonoBehaviour:
@@ -5452,7 +5623,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1981887217}
+  m_TargetGraphic: {fileID: 900542677}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -5475,7 +5646,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1981887214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -5621,11 +5792,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 175
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 100
+    m_MaxSize: 175
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5948,8 +6119,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1421073129}
-        m_MethodName: StartBtn
+      - m_Target: {fileID: 1317027984}
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
