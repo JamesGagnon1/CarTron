@@ -85,12 +85,12 @@ public class CarMove : MonoBehaviour {
 			trail_time = 0;
 			Instantiate(Trail, transform.position + transform.forward * -0.5f,transform.rotation);
 		}
-	}
+    }
 	void OnCollisionEnter (Collision Hit) {
 		if (Hit.gameObject.tag == "Death" || Hit.gameObject.tag == "P1" || Hit.gameObject.tag == "P2") {
 			Instantiate (Explosion, transform.position, transform.rotation);
-			Cursor.visible = true;
-			Cursor.lockState = CursorLockMode.None;
+			//Cursor.visible = true;
+			//Cursor.lockState = CursorLockMode.None;
 			if (Hit.gameObject.tag == "Death") {
 				if (P1) {
 					Destroy(GameObject.Find("Car P2"));
